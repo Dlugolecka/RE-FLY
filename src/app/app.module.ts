@@ -10,6 +10,8 @@ import { SummaryComponent } from './summary/summary.component';
 import { ErrorComponent } from './error/error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { WeatherComponent } from './homepage/weather/weather.component';
+import { ChoiceOfPlaceComponent } from './homepage/choice-of-place/choice-of-place.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     DetailsComponent,
     SummaryComponent,
     ErrorComponent,
+    WeatherComponent,
+    ChoiceOfPlaceComponent,
   ],
   imports: [
     BrowserModule,

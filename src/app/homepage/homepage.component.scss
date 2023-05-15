@@ -1,4 +1,8 @@
 .main_content {
   min-height: calc(100vh - 200px);
   padding: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
