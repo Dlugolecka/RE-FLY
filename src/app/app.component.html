@@ -1,20 +1,5 @@
-<div class="container">
-  <div class="container_content">
-    <img
-      class="airplane"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Generic_turbofan_airplane.svg"
-      alt=""
-    />
-    <main class="container_btn">
-      <button mat-fab extended color="accent" class="btn">Registration</button>
-      <button mat-fab extended color="accent" class="btn">Login</button>
-    </main>
-  </div>
-</div>
-
-<router-outlet></router-outlet>
-<app-homepage></app-homepage>
-
-<div class="footer_container">
-  <p>Created by Ewelina Długołęcka for KAAFM © 2023</p>
-</div>
+<app-header></app-header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,25 @@
+<!-- <mat-card>
+  <mat-card-content> Select the number of passengers </mat-card-content>
+  <section class="example-section">
+    <label class="example-margin">Check:</label>
+    <mat-radio-group [(ngModel)]="labelPosition">
+        
+      <mat-radio-button class="example-margin">1</mat-radio-button>
+      <mat-radio-button class="example-margin">2</mat-radio-button>
+      <mat-radio-button class="example-margin">KIDS</mat-radio-button>
+    </mat-radio-group>
+  </section>
+</mat-card> -->
+<mat-card>
+  <mat-card-content>
+    <div>Passangers</div>
+    <mat-form-field appearance="fill">
+      <mat-label>Passangers</mat-label>
+      <mat-select [(value)]="selected2">
+        <mat-option>None</mat-option>
+        <mat-option value="adult">Adult</mat-option>
+        <mat-option value="kids">Kids</mat-option>
+      </mat-select>
+    </mat-form-field></mat-card-content
+  >
+</mat-card>
