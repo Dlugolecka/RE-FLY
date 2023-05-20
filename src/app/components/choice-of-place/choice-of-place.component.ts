@@ -1,11 +1,36 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-choice-of-place',
   templateUrl: './choice-of-place.component.html',
   styleUrls: ['./choice-of-place.component.scss'],
 })
-export class ChoiceOfPlaceComponent {
-  
+export class ChoiceOfPlaceComponent implements OnInit {
+  form: FormGroup<{
+    departure: FormControl;
+    arrival: FormControl;
+    startDate: FormControl;
+    endDate: FormControl;
+    passangers: FormControl;
+  }> = this.fb.group({
+    departure: this.fb.control('', Validators.required),
+    arrival: this.fb.control('', Validators.required),
+    startDate: this.fb.control('', Validators.required),
+    endDate: this.fb.control('', Validators.required),
+    passangers: this.fb.control('', Validators.required),
+  });
+
+  constructor(public fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.form.valueChanges.subscribe((res) => {
+      console.log('form', res);
+    });
+  }
 }

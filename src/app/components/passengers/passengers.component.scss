@@ -1,14 +1,31 @@
-.example-h2 {
-    margin: 10px;
-  }
-  
-  .example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-  }
-  
-  .example-margin {
-    margin: 0 10px;
-  }
+:host {
+  position: relative;
+}
+
+.header_passengers {
+  display: flex;
+  justify-content: center;
+}
+
+.menu_container {
+  position: absolute;
+  top: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn_icon {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+input {
+  background-color: #ffffff;
+  width: 40px;
+  border: none;
+  display: flex;
+}

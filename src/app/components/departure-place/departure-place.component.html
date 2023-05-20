@@ -1,11 +1,11 @@
-<div>
+<div [formGroup]="form">
   <mat-form-field appearance="fill">
-    <mat-label>Select Arrival Place</mat-label>
-    <mat-select [(value)]="selected">
+    <mat-label>Select Departure Place</mat-label>
+    <mat-select [formControlName]="'departure'">
       <mat-option>None</mat-option>
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
+      <mat-option value="Poland">Poland</mat-option>
+      <mat-option value="London">London</mat-option>
+      <mat-option value="Roma">Roma</mat-option>
     </mat-select>
   </mat-form-field>
 </div>

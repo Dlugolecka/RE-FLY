@@ -1,25 +1,26 @@
-<!-- <mat-card>
-  <mat-card-content> Select the number of passengers </mat-card-content>
-  <section class="example-section">
-    <label class="example-margin">Check:</label>
-    <mat-radio-group [(ngModel)]="labelPosition">
-        
-      <mat-radio-button class="example-margin">1</mat-radio-button>
-      <mat-radio-button class="example-margin">2</mat-radio-button>
-      <mat-radio-button class="example-margin">KIDS</mat-radio-button>
-    </mat-radio-group>
-  </section>
-</mat-card> -->
-<mat-card>
+<button mat-raised-button (click)="showPassengers()">Passangers</button>
+
+<mat-card class="menu_container" *ngIf="isMenuVisible">
   <mat-card-content>
-    <div>Passangers</div>
-    <mat-form-field appearance="fill">
-      <mat-label>Passangers</mat-label>
-      <mat-select [(value)]="selected2">
-        <mat-option>None</mat-option>
-        <mat-option value="adult">Adult</mat-option>
-        <mat-option value="kids">Kids</mat-option>
-      </mat-select>
+    <div class="header_passengers">Passangers</div>
+    <mat-form-field appearance="fill" [formGroup]="form">
+      <div class="container">
+        <p>Adult</p>
+        <button type="button" (click)="minusAdult()">
+          <i class="fa fa-minus"></i>-
+        </button>
+        <input
+          matInput
+          [formControlName]="'passangers'"
+          type="number"
+          [attr.disabled]="true"
+        />
+        <button type="button" (click)="plus()">
+          <i class="fa fa-plus"></i>+
+        </button>
+      </div>
+      <!-- <div><p>Kids</p></div>
+      <div><p>Enter the age of the child</p></div> -->
     </mat-form-field></mat-card-content
   >
 </mat-card>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-arrival-place',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./arrival-place.component.scss'],
 })
 export class ArrivalPaceComponent {
-  selected2 = null;
+  @Input() form: FormGroup = new FormGroup({});
 }
