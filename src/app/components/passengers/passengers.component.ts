@@ -55,22 +55,38 @@ export class PassengersComponent implements OnInit {
   }
 
   adult: any = 1;
-  quantity: number = 0;
+  kids: any = 1;
+  quantityAdults: number = 0;
+  quantityKids: number = 0;
   i: number = 0;
+  ii: number = 0;
 
   minusAdult() {
     if (this.i! >= 2) {
       this.i--;
-      this.quantity = this.i;
-      this.form.get('passangers')?.patchValue(this.quantity);
+      this.quantityAdults = this.i;
+      this.form.get('passangers.adult')?.patchValue(this.quantityAdults);
     }
   }
-
-  plus() {
+  plusAdult() {
     if (this.i != 9) {
       this.adult = this.i++;
-      this.quantity = this.i;
-      this.form.get('passangers')?.patchValue(this.quantity);
+      this.quantityAdults = this.i;
+      this.form.get('passangers.adult')?.patchValue(this.quantityAdults);
+    }
+  }
+  minusKids() {
+    if (this.ii! >= 1) {
+      this.ii--;
+      this.quantityKids = this.ii;
+      this.form.get('passangers.kids')?.patchValue(this.quantityKids);
+    }
+  }
+  plusKids() {
+    if (this.ii != 9) {
+      this.kids = this.ii++;
+      this.quantityKids = this.ii;
+      this.form.get('passangers.kids')?.patchValue(this.quantityKids);
     }
   }
 }

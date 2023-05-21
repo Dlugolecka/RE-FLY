@@ -17,13 +17,16 @@ export class ChoiceOfPlaceComponent implements OnInit {
     arrival: FormControl;
     startDate: FormControl;
     endDate: FormControl;
-    passangers: FormControl;
+    passangers: FormGroup;
   }> = this.fb.group({
     departure: this.fb.control('', Validators.required),
     arrival: this.fb.control('', Validators.required),
     startDate: this.fb.control('', Validators.required),
     endDate: this.fb.control('', Validators.required),
-    passangers: this.fb.control('', Validators.required),
+    passangers: this.fb.group({
+      adult: this.fb.control('', Validators.required),
+      kids: this.fb.control(''),
+    }),
   });
 
   constructor(public fb: FormBuilder) {}
