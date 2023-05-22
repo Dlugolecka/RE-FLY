@@ -5,6 +5,7 @@
 .header_passengers {
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .menu_container {
@@ -12,20 +13,25 @@
   top: 50px;
 }
 
-.container {
+.flex {
   display: flex;
-  justify-content: space-between;
+  flex-flow: row nowrap;
+  margin-bottom: 7px;
 }
 
-.btn_icon {
+.text_passangers {
+  width: 30%;
+  padding-top: 12px;
+}
+
+.main_inp {
+  width: 40px;
+  text-align: center;
+}
+
+.btn_passangers {
   display: flex;
   justify-content: center;
-  align-self: center;
-}
-
-input {
-  background-color: #ffffff;
-  width: 40px;
-  border: none;
-  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
 }

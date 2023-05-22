@@ -24,8 +24,9 @@ export class ChoiceOfPlaceComponent implements OnInit {
     startDate: this.fb.control('', Validators.required),
     endDate: this.fb.control('', Validators.required),
     passangers: this.fb.group({
-      adult: this.fb.control('', Validators.required),
-      kids: this.fb.control(''),
+      adult: this.fb.control('0', Validators.required),
+      kids: this.fb.control('0'),
+      kidsAge: this.fb.control(''),
     }),
   });
 
