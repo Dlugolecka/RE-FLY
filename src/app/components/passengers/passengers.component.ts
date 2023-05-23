@@ -60,7 +60,6 @@ export class PassengersComponent implements OnInit {
   quantityKids: number = 0;
   i: number = 0;
   ii: number = 0;
-  iii: number = 0;
 
   minusAdult() {
     if (this.i! >= 2) {
