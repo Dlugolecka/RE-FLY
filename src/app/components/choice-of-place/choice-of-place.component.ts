@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-choice-of-place',
@@ -29,11 +30,24 @@ export class ChoiceOfPlaceComponent implements OnInit {
     }),
   });
 
-  constructor(public fb: FormBuilder) {}
+  departureCity: string = '';
+  arrivalCity: string = '';
+
+  constructor(public fb: FormBuilder, private weatherService: WeatherService) {}
 
   ngOnInit(): void {
     this.form.valueChanges.subscribe((res) => {
       console.log('form', res);
+      console.log('departure', this.form.get('departure')?.value);
+      if (this.departureCity !== this.form.get('departure')?.value) {
+        this.departureCity = this.form.get('departure')?.value;
+        this.weatherService.departure$.next(this.departureCity);
+      }
+
+      if (this.arrivalCity !== this.form.get('departure')?.value) {
+        this.arrivalCity = this.form.get('arrival')?.value;
+        this.weatherService.arrival$.next(this.arrivalCity);
+      }
     });
   }
 }
