@@ -9,7 +9,8 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class WeatherComponent implements OnInit {
   departureWeather: any = null;
   arrivalWeather: any = null;
-
+  departureCity: string = '';
+  arrivalCity: string = '';
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class WeatherComponent implements OnInit {
         console.log(city);
         this.weatherService.getWeather(city).subscribe((res) => {
           this.departureWeather = res['current_weather'];
+          this.departureCity = city;
           console.log('weather', this.departureWeather);
         });
       });
@@ -29,6 +31,7 @@ export class WeatherComponent implements OnInit {
         console.log(city);
         this.weatherService.getWeather(city).subscribe((res) => {
           this.arrivalWeather = res['current_weather'];
+          this.arrivalCity = city;
           console.log('arr weather', this.arrivalWeather);
         });
       });

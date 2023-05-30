@@ -8,8 +8,8 @@ import { Observable, Subject } from 'rxjs';
 export class WeatherService {
   Coordinates: any = {
     Warsaw: [52.23, 21.01],
-    Roma: [52.23, 21.01],
-    London: [52.23, 21.01],
+    Roma: [39, 52, -1, 15],
+    London: [51, 51, -0, 13],
   };
 
   departure$: Subject<string> = new Subject();

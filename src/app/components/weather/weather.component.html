@@ -1,5 +1,36 @@
 <div class="container">
   <div class="header_weather">The weather today!</div>
-  <div class="main_weather">/weather/</div>
-  <div class="date_weather"></div>
+  <div class="main_weather">
+    <div class="place_weather">Departure place: {{ departureCity }}</div>
+    <div>
+      Temperature:
+      <ng-container *ngIf="departureWeather != null"
+        >{{ departureWeather.temperature }}°C</ng-container
+      >
+    </div>
+    <div>
+      Windspeed:
+      <ng-container *ngIf="departureWeather != null"
+        >{{ departureWeather.windspeed }} km/h</ng-container
+      >
+    </div>
+    <div class="place_weather">Arrival place: {{ arrivalCity }}</div>
+    <div>
+      Temperature:
+      <ng-container *ngIf="arrivalWeather != null"
+        >{{ arrivalWeather.temperature }}°C</ng-container
+      >
+    </div>
+    <div>
+      Windspeed:
+      <ng-container *ngIf="arrivalWeather != null"
+        >{{ arrivalWeather.windspeed }} km/h</ng-container
+      >
+    </div>
+  </div>
+  <div class="date_weather">
+    <ng-container *ngIf="departureWeather != null">{{
+      departureWeather.time | date : "dd.MM.YYYY"
+    }}</ng-container>
+  </div>
 </div>
