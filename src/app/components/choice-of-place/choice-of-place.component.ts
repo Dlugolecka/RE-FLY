@@ -44,7 +44,7 @@ export class ChoiceOfPlaceComponent implements OnInit {
         this.weatherService.departure$.next(this.departureCity);
       }
 
-      if (this.arrivalCity !== this.form.get('departure')?.value) {
+      if (this.arrivalCity !== this.form.get('arrival')?.value) {
         this.arrivalCity = this.form.get('arrival')?.value;
         this.weatherService.arrival$.next(this.arrivalCity);
       }

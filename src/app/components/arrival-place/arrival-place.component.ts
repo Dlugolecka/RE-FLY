@@ -8,4 +8,15 @@ import { FormGroup } from '@angular/forms';
 })
 export class ArrivalPaceComponent {
   @Input() form: FormGroup = new FormGroup({});
+
+  hidden() {
+    // console.log(
+    //   'miejsce wylotu - porownanie',
+    //   this.form.get('departure')?.value
+    // );
+    // console.log(
+    //   'miejsce przylotu - porownanie',
+    //   this.form.get('arrival')?.value
+    // );
+  }
 }
