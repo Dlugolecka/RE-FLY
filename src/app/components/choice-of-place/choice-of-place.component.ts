@@ -36,12 +36,15 @@ export class ChoiceOfPlaceComponent implements OnInit {
   constructor(public fb: FormBuilder, private weatherService: WeatherService) {}
 
   ngOnInit(): void {
+    this.form.get('arrival')?.disable();
+
     this.form.valueChanges.subscribe((res) => {
       console.log('form', res);
       console.log('departure', this.form.get('departure')?.value);
       if (this.departureCity !== this.form.get('departure')?.value) {
         this.departureCity = this.form.get('departure')?.value;
         this.weatherService.departure$.next(this.departureCity);
+        this.form.get('arrival')?.enable();
       }
 
       if (this.arrivalCity !== this.form.get('arrival')?.value) {
