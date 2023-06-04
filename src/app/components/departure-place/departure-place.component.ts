@@ -8,4 +8,5 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class DeparturePlaceComponent {
   @Input() form: FormGroup = new FormGroup({});
+  @Input() cities: string[] = [];
 }

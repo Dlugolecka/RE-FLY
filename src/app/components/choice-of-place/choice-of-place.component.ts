@@ -33,6 +33,8 @@ export class ChoiceOfPlaceComponent implements OnInit {
   departureCity: string = '';
   arrivalCity: string = '';
 
+  cities: string[] = ['Warsaw', 'London', 'Munich'];
+
   constructor(public fb: FormBuilder, private weatherService: WeatherService) {}
 
   ngOnInit(): void {

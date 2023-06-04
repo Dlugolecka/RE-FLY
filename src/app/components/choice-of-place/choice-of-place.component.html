@@ -1,7 +1,7 @@
 <div class="container" [formGroup]="form">
   <div class="header_options">Choose your destination</div>
-  <app-departure-place [form]="form"></app-departure-place>
-  <app-arrival-place [form]="form"></app-arrival-place>
+  <app-departure-place [cities]="cities" [form]="form"></app-departure-place>
+  <app-arrival-place [cities]="cities" [form]="form"></app-arrival-place>
   <app-calendar [form]="form"></app-calendar>
   <app-passengers [form]="form"></app-passengers>
 </div>

@@ -2,10 +2,9 @@
   <mat-form-field appearance="fill">
     <mat-label>Select Arrival Place</mat-label>
     <mat-select [formControlName]="'arrival'">
-      <mat-option>None</mat-option>
-      <mat-option value="Warsaw">Warsaw</mat-option>
-      <mat-option value="London">London</mat-option>
-      <mat-option value="Roma">Roma</mat-option>
+      <mat-option *ngFor="let city of cities" [value]="city">{{
+        city
+      }}</mat-option>
     </mat-select>
   </mat-form-field>
 </div>

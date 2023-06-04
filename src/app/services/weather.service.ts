@@ -8,8 +8,8 @@ import { Observable, Subject } from 'rxjs';
 export class WeatherService {
   Coordinates: any = {
     Warsaw: [52.23, 21.01],
-    Roma: [39, 52, -1, 15],
-    London: [51, 51, -0, 13],
+    Munich: [48.14, 11.58],
+    London: [51.51, -0.13],
   };
 
   departure$: Subject<string> = new Subject();
@@ -18,6 +18,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   getWeather(city: string): Observable<any> {
+    console.log('TEST', this.Coordinates[city][0]);
     const url: string = `https://api.open-meteo.com/v1/forecast?latitude=${this.Coordinates[city][0]}&longitude=${this.Coordinates[city][1]}&hourly=temperature_2m,rain,showers,snowfall,snow_depth,windspeed_10m&current_weather=true&forecast_days=1&timezone=Europe%2FBerlin`;
     return this.http.get(url);
   }
