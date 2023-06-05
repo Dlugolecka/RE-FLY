@@ -1,6 +1,6 @@
 .container {
   background-color: gray;
-  width: 400px;
+  width: 500px;
   height: 400px;
   display: flex;
   flex-flow: column nowrap;
@@ -11,4 +11,18 @@
 .header_options {
   font-size: 20px;
   padding: 20px;
+}
+
+.flex_field {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.select {
+  padding: 5px;
+}
+
+.container_btn {
+  margin-top: 20px;
 }

@@ -1,15 +1,28 @@
 <div class="container" [formGroup]="form">
   <div class="header_options">Choose your destination</div>
-  <app-departure-place [cities]="cities" [form]="form"></app-departure-place>
-  <app-arrival-place [cities]="cities" [form]="form"></app-arrival-place>
+  <div class="flex_field">
+    <app-departure-place
+      class="select"
+      [cities]="cities"
+      [form]="form"
+    ></app-departure-place>
+    <app-arrival-place
+      class="select"
+      [cities]="cities"
+      [form]="form"
+    ></app-arrival-place>
+  </div>
   <app-calendar [form]="form"></app-calendar>
   <app-passengers [form]="form"></app-passengers>
-  <button
-    mat-raised-button
-    color="primary"
-    type="submit"
-    [disabled]="!form.valid"
-  >
-    Submit
-  </button>
+  <div class="container_btn">
+    <button
+      class="btn_submit"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.valid"
+    >
+      Submit
+    </button>
+  </div>
 </div>
