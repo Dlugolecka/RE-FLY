@@ -4,4 +4,12 @@
   <app-arrival-place [cities]="cities" [form]="form"></app-arrival-place>
   <app-calendar [form]="form"></app-calendar>
   <app-passengers [form]="form"></app-passengers>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!form.valid"
+  >
+    Submit
+  </button>
 </div>
