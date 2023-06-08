@@ -8,15 +8,32 @@
 }
 
 .card_logon {
+  position: relative;
+  // display: flex;
+  // flex-direction: row;
   width: 100%;
   height: 100%;
-  background-color: #145da0;
+  background-color: #d9d9d9;
   box-shadow: 4px 4px 4px rgba(64, 62, 62, 0.5);
   border-radius: 8px;
   overflow: hidden;
 }
 
+.registrationMode {
+  // flex-direction: row-reverse;
+  .sign_in {
+    left: 40%;
+  }
+  .menu_signUp {
+    left: 0;
+  }
+}
+
 .sign_in {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 60%;
   height: 100%;
   background-color: #d9d9d9;
@@ -24,6 +41,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s;
 
   h2 {
     margin: 0 0 30px;
@@ -39,6 +57,22 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.menu_signUp {
+  position: absolute;
+  left: 60%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  background-color: #145da0;
+  width: 40%;
+  padding: 40px;
+  transition: all 0.5s;
+  z-index: 2;
 }
 
 .sign_up {
