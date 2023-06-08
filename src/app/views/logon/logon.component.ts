@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./logon.component.scss'],
 })
 export class LogonComponent {
+  defaultView: boolean = true;
   showRegistration: boolean = false;
 
-  onShowRegistration() {
-    this.showRegistration = true;
+  onSwitchMode() {
+    setTimeout(() => (this.showRegistration = !this.showRegistration), 100);
+    this.defaultView = !this.defaultView;
   }
 }
