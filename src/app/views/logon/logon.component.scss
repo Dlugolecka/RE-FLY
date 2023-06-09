@@ -1,4 +1,5 @@
 .container_logon {
+  min-height: calc(100vh - 300px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,10 +10,8 @@
 
 .card_logon {
   position: relative;
-  // display: flex;
-  // flex-direction: row;
-  width: 100%;
-  height: 100%;
+  width: 1000px;
+  height: 400px;
   background-color: #d9d9d9;
   box-shadow: 4px 4px 4px rgba(64, 62, 62, 0.5);
   border-radius: 8px;
@@ -30,6 +29,10 @@
 }
 
 .sign {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
@@ -41,6 +44,8 @@
 }
 
 .sign_in {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -48,10 +53,6 @@
 
   h2 {
     margin: 0 0 30px;
-  }
-
-  .input_container {
-    margin-bottom: 30px;
   }
 
   .btn_container {
@@ -73,7 +74,7 @@
   }
 
   .input_container {
-    margin-bottom: 30px;
+    margin-left: 15px;
   }
 
   .btn_container {
@@ -81,6 +82,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .input_flex {
+    display: flex;
+    flex-flow: row nowrap;
   }
 }
 

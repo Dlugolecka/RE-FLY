@@ -5,12 +5,16 @@
         <h2>Sign In</h2>
         <div>
           <div class="input_container">
-            <label for="login">Login: </label>
-            <input id="login" type="text" />
+            <mat-form-field>
+              <mat-label>Login</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
           </div>
           <div class="input_container">
-            <label for="password">Password: </label>
-            <input id="password" type="password" />
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput id="password" type="password" />
+            </mat-form-field>
           </div>
           <div class="btn_container">
             <button mat-raised-button color="primary" type="submit">
@@ -20,25 +24,40 @@
         </div>
       </form>
       <form class="sign_up" *ngIf="showRegistration">
+        <h2>Sign Up</h2>
         <div class="input_container">
-          <label for="login">Login: </label>
-          <input id="login" type="text" />
+          <mat-form-field>
+            <mat-label>Login</mat-label>
+            <input matInput id="login" type="text" />
+          </mat-form-field>
         </div>
-        <div class="input_container">
-          <label for="name">Name: </label>
-          <input id="name" type="text" />
+        <div class="input_flex">
+          <div class="input_container">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput id="name" type="text" />
+            </mat-form-field>
+          </div>
+          <div class="input_container">
+            <mat-form-field>
+              <mat-label>Surname</mat-label>
+              <input matInput id="surname" type="text" />
+            </mat-form-field>
+          </div>
         </div>
-        <div class="input_container">
-          <label for="surname">Surname: </label>
-          <input id="surname" type="text" />
-        </div>
-        <div class="input_container">
-          <label for="password">Password: </label>
-          <input id="password" type="password" />
-        </div>
-        <div class="input_container">
-          <label for="repeatPassword">Repeat password: </label>
-          <input id="repeatPassword" type="password" />
+        <div class="input_flex">
+          <div class="input_container">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput id="password" type="password" />
+            </mat-form-field>
+          </div>
+          <div class="input_container">
+            <mat-form-field>
+              <mat-label>Repeat password</mat-label>
+              <input matInput id="repeat_password" type="password" />
+            </mat-form-field>
+          </div>
         </div>
         <div class="btn_container">
           <button mat-raised-button color="primary" type="submit">
@@ -51,14 +70,17 @@
       <div class="menu_signUp" *ngIf="!showRegistration">
         <h2>Hello Friend!</h2>
         <p>Please create your account to use this app</p>
-        <button (click)="onSwitchMode()">Sign up</button>
+        <button mat-raised-button color="primary" (click)="onSwitchMode()">
+          Sign up
+        </button>
       </div>
       <div class="menu_signIn" *ngIf="showRegistration">
         <h2>Welcome back</h2>
         <p>Please login to your account</p>
-        <button (click)="onSwitchMode()">Sign in</button>
+        <button mat-raised-button color="primary" (click)="onSwitchMode()">
+          Sign in
+        </button>
       </div>
     </div>
-    <!-- <div class="sign_up"></div> -->
   </div>
 </div>
