@@ -36,6 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { APP_DATE_FORMATS } from './core/date.format';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
     PassengersComponent,
     HeaderComponent,
     FooterComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

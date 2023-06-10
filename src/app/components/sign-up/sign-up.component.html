@@ -1,0 +1,57 @@
+<form class="sign_up" [formGroup]="form" (ngSubmit)="onSignUp()">
+  <h2>Sign Up</h2>
+  <div class="input_container">
+    <mat-form-field>
+      <mat-label>Login</mat-label>
+      <input matInput id="login" type="text" formControlName="login" />
+    </mat-form-field>
+  </div>
+  <div class="input_flex">
+    <div class="input_container">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput id="name" type="text" formControlName="name" />
+      </mat-form-field>
+    </div>
+    <div class="input_container">
+      <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input matInput id="surname" type="text" formControlName="surname" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="input_flex">
+    <div class="input_container">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          id="password"
+          type="password"
+          formControlName="password"
+        />
+      </mat-form-field>
+    </div>
+    <div class="input_container">
+      <mat-form-field>
+        <mat-label>Repeat password</mat-label>
+        <input
+          matInput
+          id="repeat_password"
+          type="password"
+          formControlName="repeatPassword"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="btn_container">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!form.valid && !samePassword"
+    >
+      Sign up
+    </button>
+  </div>
+</form>
