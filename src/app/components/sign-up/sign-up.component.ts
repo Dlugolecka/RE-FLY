@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SignUpService } from 'src/app/services/sign-up.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,6 +18,8 @@ export class SignUpComponent implements OnInit {
 
   samePassword: boolean = false;
 
+  constructor(private signUpService: SignUpService) {}
+
   ngOnInit(): void {
     // TODO: add password validation
     // this.form.valueChanges.subscribe((res) => {
@@ -32,5 +35,7 @@ export class SignUpComponent implements OnInit {
 
   onSignUp(): void {
     console.log(this.form.value);
+    this.signUpService.registerUser(this.form.value);
+    this.form.reset();
   }
 }
