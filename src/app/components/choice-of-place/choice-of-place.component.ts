@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FlyService } from 'src/app/services/fly.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
@@ -39,7 +40,8 @@ export class ChoiceOfPlaceComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     private weatherService: WeatherService,
-    private flyService: FlyService
+    private flyService: FlyService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -64,5 +66,8 @@ export class ChoiceOfPlaceComponent implements OnInit {
   onSubmit() {
     this.flyService.saveFly(this.form.value);
     this.form.reset();
+    this.router.navigate(['/logon'], {
+      queryParams: { showRegistration: false },
+    });
   }
 }
