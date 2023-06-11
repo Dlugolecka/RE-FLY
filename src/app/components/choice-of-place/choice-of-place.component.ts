@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { FlyService } from 'src/app/services/fly.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -35,7 +36,11 @@ export class ChoiceOfPlaceComponent implements OnInit {
 
   cities: string[] = ['Warsaw', 'London', 'Munich'];
 
-  constructor(public fb: FormBuilder, private weatherService: WeatherService) {}
+  constructor(
+    public fb: FormBuilder,
+    private weatherService: WeatherService,
+    private flyService: FlyService
+  ) {}
 
   ngOnInit(): void {
     this.form.get('arrival')?.disable();
@@ -54,5 +59,10 @@ export class ChoiceOfPlaceComponent implements OnInit {
         this.weatherService.arrival$.next(this.arrivalCity);
       }
     });
+  }
+
+  onSubmit() {
+    this.flyService.saveFly(this.form.value);
+    this.form.reset();
   }
 }
