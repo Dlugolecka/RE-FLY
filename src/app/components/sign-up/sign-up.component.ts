@@ -18,15 +18,16 @@ export class SignUpComponent implements OnInit {
   samePassword: boolean = false;
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe((res) => {
-      if (
-        this.form.get('password')?.value &&
-        this.form.get('repeatPassword')?.value &&
-        this.form.get('password')?.value &&
-        this.form.get('repeatPassword')?.value
-      ) {
-      }
-    });
+    // TODO: add password validation
+    // this.form.valueChanges.subscribe((res) => {
+    //   if (
+    //     this.form.get('password')?.value &&
+    //     this.form.get('repeatPassword')?.value &&
+    //     this.form.get('password')?.value &&
+    //     this.form.get('repeatPassword')?.value
+    //   ) {
+    //   }
+    // });
   }
 
   onSignUp(): void {
