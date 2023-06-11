@@ -20,7 +20,7 @@ export class FlyService {
     localStorage.setItem(this.localstorageName, JSON.stringify(data));
   }
 
-  getFly(flyName: string) {
+  getFly() {
     let dataBase = localStorage.getItem(this.localstorageName);
     if (!dataBase) {
       return;
@@ -29,7 +29,7 @@ export class FlyService {
     return parsedDataBase;
   }
 
-  deleteFly(flyName: string) {
+  deleteFly() {
     localStorage.clear();
   }
 }

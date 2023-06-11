@@ -1,0 +1,20 @@
+.container {
+  width: 1000px;
+  height: 400px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+
+  .parameter_container {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    label {
+      font-weight: 500;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
