@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SignInService } from 'src/app/services/sign-in.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +13,11 @@ export class SignInComponent {
     password: new FormControl('', Validators.required),
   });
 
+  constructor(private signInService: SignInService) {}
+
   onSignIn(): void {
     console.log(this.form.value);
+    this.signInService.getUser(this.form.value);
+    this.form.reset();
   }
 }
