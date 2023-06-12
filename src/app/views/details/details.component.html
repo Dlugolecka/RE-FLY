@@ -14,10 +14,17 @@
         <p>MAX. 10KG</p>
         <p>Wheels: allowed/optional</p>
         <p>55x40x23cm</p>
-        <button>BUY</button>
+        <div class="select" [formGroup]="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Suitcase</mat-label>
+            <mat-select [formControlName]="'suitcase'">
+              <mat-option value="0">0</mat-option>
+              <mat-option value="1">1</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
     </div>
-
     <div class="airplane"></div>
   </div>
 </div>
