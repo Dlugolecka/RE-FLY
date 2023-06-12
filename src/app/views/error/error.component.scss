@@ -1,0 +1,23 @@
+.container {
+  background-image: url("./../../../assets/biala-chmura-na-niebieskim-niebie.jpg");
+  background-color: #39b0e8;
+  min-height: calc(100vh - 155px);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .error {
+    font-size: 90px;
+    margin: 20px;
+  }
+
+  .error_text {
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  .btn {
+    width: 150px;
+  }
+}
