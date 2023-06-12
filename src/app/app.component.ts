@@ -8,6 +8,7 @@ import { FlyService } from './services/fly.service';
 })
 export class AppComponent implements OnInit {
   title = 'RE-FLY';
+
   constructor(private flyServices: FlyService) {}
   ngOnInit(): void {
     this.flyServices.createFlyDateBase();

@@ -5,6 +5,7 @@ import { LogonComponent } from './views/logon/logon.component';
 import { ErrorComponent } from './views/error/error.component';
 import { SummaryComponent } from './views/summary/summary.component';
 import { DetailsComponent } from './views/details/details.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,10 +24,12 @@ const routes: Routes = [
   {
     path: 'details',
     component: DetailsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'summary',
     component: SummaryComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'error',

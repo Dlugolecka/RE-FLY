@@ -38,6 +38,7 @@ import { APP_DATE_FORMATS } from './core/date.format';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
   providers: [
     { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS },
     { provide: DateAdapter, useClass: MomentDateAdapter },
+    AuthGuard,
   ],
   bootstrap: [AppComponent],
 })

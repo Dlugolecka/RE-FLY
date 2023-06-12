@@ -13,11 +13,29 @@
         color="accent"
         class="btn"
         (click)="goToRegistration()"
+        *ngIf="!user"
       >
         Registration
       </button>
-      <button mat-fab extended color="accent" class="btn" (click)="goToLogin()">
+      <button
+        mat-fab
+        extended
+        color="accent"
+        class="btn"
+        (click)="goToLogin()"
+        *ngIf="!user"
+      >
         Login
+      </button>
+      <button
+        mat-fab
+        extended
+        color="accent"
+        class="btn"
+        (click)="logOut()"
+        *ngIf="user"
+      >
+        Log out
       </button>
     </div>
   </div>

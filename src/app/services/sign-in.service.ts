@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
+
+interface IUser {
+  login: string;
+  name: string;
+  password: string;
+  repeatPassword: string;
+  surname: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignInService {
   user = null;
+  user$: BehaviorSubject<any> = new BehaviorSubject(null);
   constructor() {}
 
   getUser(userCredentials: any) {
@@ -21,6 +31,15 @@ export class SignInService {
     ) {
       this.user = parsedUserDataBase;
       console.log('user:', this.user);
+      this.user$.next(this.user);
+    }
+  }
+
+  isUserLoggedIn() {
+    if (this.user) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
