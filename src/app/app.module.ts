@@ -39,6 +39,7 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { AirplaneComponent } from './components/airplane/airplane.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AuthGuard } from './core/guards/auth.guard';
     FooterComponent,
     SignInComponent,
     SignUpComponent,
+    AirplaneComponent,
   ],
   imports: [
     BrowserModule,
