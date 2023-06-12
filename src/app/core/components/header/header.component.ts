@@ -18,4 +18,8 @@ export class HeaderComponent {
       queryParams: { showRegistration: false },
     });
   }
+
+  goToHome() {
+    this.router.navigate(['/home'], {});
+  }
 }
