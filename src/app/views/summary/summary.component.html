@@ -1,27 +1,31 @@
-<div class="container" *ngIf="flyParameters">
-  <h1>Fly summary</h1>
-  <div class="parameter_container">
-    <label>Arrival</label>
-    <p>{{ flyParameters.arrival }}</p>
-  </div>
-  <div class="parameter_container">
-    <label>Departure</label>
-    <p>{{ flyParameters.departure }}</p>
-  </div>
-  <div class="parameter_container">
-    <label>Start date</label>
-    <p>{{ flyParameters.startDate | date }}</p>
-  </div>
-  <div class="parameter_container">
-    <label>End date</label>
-    <p>{{ flyParameters.endDate | date }}</p>
-  </div>
-  <div class="parameter_container">
-    <label>Adult passangers</label>
-    <p>{{ flyParameters.passangers.adult }}</p>
-  </div>
-  <div class="parameter_container">
-    <label>Kids passangers</label>
-    <p>{{ flyParameters.passangers.kids }}</p>
+<div class="container_view">
+  <div class="container" *ngIf="flyParameters">
+    <div class="parameters">
+      <div class="title">Fly summary</div>
+      <div class="parameter_container">
+        <label>Arrival</label>
+        <p>{{ flyParameters.arrival }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>Departure</label>
+        <p>{{ flyParameters.departure }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>Start date</label>
+        <p>{{ flyParameters.startDate | date }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>End date</label>
+        <p>{{ flyParameters.endDate | date }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>Adult passangers</label>
+        <p>{{ flyParameters.passangers.adult }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>Kids passangers</label>
+        <p>{{ flyParameters.passangers.kids }}</p>
+      </div>
+    </div>
   </div>
 </div>
