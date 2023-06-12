@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignInService } from 'src/app/services/sign-in.service';
 
 @Component({
@@ -13,11 +14,12 @@ export class SignInComponent {
     password: new FormControl('', Validators.required),
   });
 
-  constructor(private signInService: SignInService) {}
+  constructor(private signInService: SignInService, private router: Router) {}
 
   onSignIn(): void {
     console.log(this.form.value);
     this.signInService.getUser(this.form.value);
     this.form.reset();
+    this.router.navigate(['/details'], {});
   }
 }
