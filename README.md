@@ -1,27 +1,57 @@
-# REFLY
+# RE-FLY
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+The aim of the project is to write an application for booking a plane ticket.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [General Info](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Setup](#setup)
+- [Project Status](#project-status)
+- [Contact](#contact)
 
-## Code scaffolding
+## General Information
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project was created on the basis of guidelines given by lecturers during studies.
+The project is about creating a website containing a flight booking system.
+The home page is divided into two parts. The first part shows the current weather of your departure and destination.
+The second part contains a form with: departure place, arrival place, date and number of passengers.
+The logon page allows to register the user and gives the option to log in. The data is saved in LocalStorage.
+On the details page, the user can choose additional baggage and a seat on the plane.
+The summary page contains all information from the user.
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Project is created with:
 
-## Running unit tests
+- Angular
+- TypeScript
+- SCSS
+- Webpack
+- RxJS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
 
-## Running end-to-end tests
+- selection of data needed to book a flight
+- login
+- registration
+- choice of seats on the airplane
+- summary of the flight
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Setup
 
-## Further help
+To run the application you need to:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- install Visual Studio Code (or any other IDE)
+- in terminal, enter the command `npm install`
+- in terminal, type `ng serve` to build the website files
+- application will be available under localhost:4200
+
+## Project Status
+
+Project is: _in progress_ .
+
+## Contact
+
+Created by Ewelina Długołęcka - KAAFM
