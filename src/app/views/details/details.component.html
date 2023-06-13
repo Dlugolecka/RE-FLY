@@ -29,6 +29,7 @@
       <app-airplane (seatSelect)="onSeatSelect($event)"></app-airplane>
     </div>
     <button
+      [disabled]="!form.valid"
       (click)="onSubmit()"
       class="btn"
       mat-raised-button
