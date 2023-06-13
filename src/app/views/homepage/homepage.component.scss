@@ -6,3 +6,12 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .main_content {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    justify-content: center;
+  }
+}
