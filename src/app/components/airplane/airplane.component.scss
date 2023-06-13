@@ -27,17 +27,16 @@ td {
 .container_seat {
   width: 200px;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: start;
   text-align: center;
-  margin: 30px auto;
+  margin: 20px auto 0;
   font-size: 20px;
 }
 
 .seat {
   font-size: 16px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: center;
-  margin-top: 15px;
 }
