@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FlyService } from 'src/app/services/fly.service';
+import { SignInService } from 'src/app/services/sign-in.service';
 import { SignUpService } from 'src/app/services/sign-up.service';
 
 @Component({
@@ -18,7 +21,12 @@ export class SignUpComponent implements OnInit {
 
   samePassword: boolean = false;
 
-  constructor(private signUpService: SignUpService) {}
+  constructor(
+    private signUpService: SignUpService,
+    private signInService: SignInService,
+    private router: Router,
+    private flyService: FlyService
+  ) {}
 
   ngOnInit(): void {
     // TODO: add password validation
@@ -34,8 +42,16 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignUp(): void {
-    console.log(this.form.value);
     this.signUpService.registerUser(this.form.value);
+    console.log(this.signInService.isUserLoggedIn());
+    this.signInService.getUser(this.form.value);
+
+    if (this.flyService.getFly()) {
+      this.router.navigate(['/details']);
+    } else {
+      this.router.navigate(['/home']);
+    }
+
     this.form.reset();
   }
 }
