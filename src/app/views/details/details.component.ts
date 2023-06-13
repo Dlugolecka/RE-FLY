@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FlyService } from 'src/app/services/fly.service';
 
 @Component({
   selector: 'app-details',
@@ -19,7 +20,11 @@ export class DetailsComponent implements OnInit {
     suitcase: this.fb.control('', Validators.required),
   });
 
-  constructor(public fb: FormBuilder, private router: Router) {}
+  constructor(
+    public fb: FormBuilder,
+    private router: Router,
+    private flyService: FlyService
+  ) {}
   ngOnInit() {
     this.form.valueChanges.subscribe((res) => {
       console.log(res);
@@ -27,6 +32,8 @@ export class DetailsComponent implements OnInit {
   }
 
   onSubmit() {
+    this.flyService.saveDetails(this.form.value);
+    this.form.reset();
     this.router.navigate(['/summary'], {});
   }
 }

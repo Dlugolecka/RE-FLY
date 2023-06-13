@@ -26,6 +26,24 @@
         <label>Kids passangers</label>
         <p>{{ flyParameters.passangers.kids }}</p>
       </div>
+      <!--  -->
+      <div class="parameter_container">
+        <label>Suitcase</label>
+        <p>{{ flyDetails.suitcase }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>Selected seats</label>
+        <p>{{ flyParameters.passangers.kids }}</p>
+      </div>
+      <div class="parameter_container">
+        <label>Total Price</label>
+        <p>
+          {{
+            flyParameters.passangers.adult * 20 +
+              flyParameters.passangers.kids * 15
+          }}
+        </p>
+      </div>
     </div>
   </div>
 </div>

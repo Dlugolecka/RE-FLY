@@ -8,10 +8,12 @@ import { FlyService } from 'src/app/services/fly.service';
 })
 export class SummaryComponent implements OnInit {
   flyParameters: any = null;
+  flyDetails: any = null;
 
   constructor(private flyService: FlyService) {}
 
   ngOnInit(): void {
     this.flyParameters = this.flyService.getFly();
+    this.flyDetails = this.flyService.getDetails();
   }
 }
