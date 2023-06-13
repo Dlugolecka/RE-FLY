@@ -7,6 +7,8 @@ import { FlyService } from 'src/app/services/fly.service';
   styleUrls: ['./airplane.component.scss'],
 })
 export class AirplaneComponent implements OnInit {
+  price: number = 20;
+  seat: any;
   fly: any;
   limit: number = 0;
   selected: string[] = [];

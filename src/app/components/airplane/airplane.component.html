@@ -1,56 +1,64 @@
-<table>
-  <tr>
-    <td>A</td>
-    <td>B</td>
-    <td></td>
-    <td>C</td>
-    <td>D</td>
-  </tr>
-  <tr *ngFor="let row of rows">
-    <td>
-      <button
-        [ngClass]="{
-          selected: selected.includes('A' + row),
-          full: limit === selected.length
-        }"
-        (click)="onSelect('A' + row)"
-      >
-        A {{ row }}
-      </button>
-    </td>
-    <td>
-      <button
-        [ngClass]="{
-          selected: selected.includes('B' + row),
-          full: limit === selected.length
-        }"
-        (click)="onSelect('B' + row)"
-      >
-        B {{ row }}
-      </button>
-    </td>
-    <td><button disabled="true"></button></td>
-    <td>
-      <button
-        [ngClass]="{
-          selected: selected.includes('C' + row),
-          full: limit === selected.length
-        }"
-        (click)="onSelect('C' + row)"
-      >
-        C {{ row }}
-      </button>
-    </td>
-    <td>
-      <button
-        [ngClass]="{
-          selected: selected.includes('D' + row),
-          full: limit === selected.length
-        }"
-        (click)="onSelect('D' + row)"
-      >
-        D {{ row }}
-      </button>
-    </td>
-  </tr>
-</table>
+<div class="container">
+  <table>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td></td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr *ngFor="let row of rows">
+      <td>
+        <button
+          [ngClass]="{
+            selected: selected.includes('A' + row),
+            full: limit === selected.length
+          }"
+          (click)="onSelect('A' + row)"
+        >
+          A {{ row }}
+        </button>
+      </td>
+      <td>
+        <button
+          [ngClass]="{
+            selected: selected.includes('B' + row),
+            full: limit === selected.length
+          }"
+          (click)="onSelect('B' + row)"
+        >
+          B {{ row }}
+        </button>
+      </td>
+      <td><button disabled="true"></button></td>
+      <td>
+        <button
+          [ngClass]="{
+            selected: selected.includes('C' + row),
+            full: limit === selected.length
+          }"
+          (click)="onSelect('C' + row)"
+        >
+          C {{ row }}
+        </button>
+      </td>
+      <td>
+        <button
+          [ngClass]="{
+            selected: selected.includes('D' + row),
+            full: limit === selected.length
+          }"
+          (click)="onSelect('D' + row)"
+        >
+          D {{ row }}
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div class="container_seat">
+    Selected seat
+    <span class="seat" *ngFor="let seat of selected"
+      >{{ seat }} - price: {{ price }}Euro
+    </span>
+  </div>
+</div>
