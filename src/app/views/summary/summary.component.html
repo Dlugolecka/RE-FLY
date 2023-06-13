@@ -33,17 +33,19 @@
       </div>
       <div class="parameter_container">
         <label>Selected seats</label>
-        <p>{{ flyParameters.passangers.kids }}</p>
+        <p>{{ flyDetails.seats }}</p>
       </div>
       <div class="parameter_container">
         <label>Total Price</label>
         <p>
           {{
             flyParameters.passangers.adult * 20 +
-              flyParameters.passangers.kids * 15
-          }}
+              flyParameters.passangers.kids * 15 +
+              flyDetails.suitcase * 30
+          }}EURO
         </p>
       </div>
     </div>
+    <div class="summary">Thank you for booking your flight on our website!</div>
   </div>
 </div>

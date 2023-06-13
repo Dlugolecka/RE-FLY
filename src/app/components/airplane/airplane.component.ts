@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FlyService } from 'src/app/services/fly.service';
 
 @Component({
@@ -14,6 +14,8 @@ export class AirplaneComponent implements OnInit {
   rows = Array(15)
     .fill(0)
     .map((x, i) => i);
+
+  @Output() seatSelect = new EventEmitter<string[]>();
 
   constructor(private flyService: FlyService) {}
 
@@ -32,6 +34,7 @@ export class AirplaneComponent implements OnInit {
       this.selected = this.selected.filter((el) => el !== seat);
     } else {
       this.selected.push(seat);
+      this.seatSelect.emit(this.selected);
     }
     console.log(this.selected);
   }

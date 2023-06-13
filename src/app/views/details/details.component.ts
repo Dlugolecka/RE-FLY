@@ -19,6 +19,7 @@ export class DetailsComponent implements OnInit {
   }> = this.fb.group({
     suitcase: this.fb.control('', Validators.required),
   });
+  selectedSeats: string[] = [];
 
   constructor(
     public fb: FormBuilder,
@@ -32,8 +33,16 @@ export class DetailsComponent implements OnInit {
   }
 
   onSubmit() {
-    this.flyService.saveDetails(this.form.value);
+    const data = {
+      suitcase: this.form.get('suitcase')?.value,
+      seats: this.selectedSeats,
+    };
+    this.flyService.saveDetails(data);
     this.form.reset();
     this.router.navigate(['/summary'], {});
+  }
+
+  onSeatSelect(event: string[]) {
+    this.selectedSeats = event;
   }
 }
