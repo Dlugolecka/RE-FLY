@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { FlyService } from 'src/app/services/fly.service';
 
 @Component({
@@ -17,12 +18,16 @@ export class AirplaneComponent implements OnInit {
 
   @Output() seatSelect = new EventEmitter<string[]>();
 
-  constructor(private flyService: FlyService) {}
+  constructor(private flyService: FlyService, private router: Router) {}
 
   ngOnInit(): void {
     this.fly = this.flyService.getFly();
-    this.limit = this.fly.passangers.adult + this.fly.passangers.kids;
-    console.log(this.limit);
+    if (this.fly !== null) {
+      this.limit = this.fly.passangers.adult + this.fly.passangers.kids;
+      console.log(this.limit);
+    } else {
+      this.router.navigate(['/home'], {});
+    }
   }
 
   onSelect(seat: string) {

@@ -24,12 +24,12 @@ const routes: Routes = [
   {
     path: 'details',
     component: DetailsComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'summary',
     component: SummaryComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'error',

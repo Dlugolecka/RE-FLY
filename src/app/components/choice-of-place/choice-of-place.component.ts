@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FlyService } from 'src/app/services/fly.service';
+import { SignInService } from 'src/app/services/sign-in.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -41,7 +42,8 @@ export class ChoiceOfPlaceComponent implements OnInit {
     public fb: FormBuilder,
     private weatherService: WeatherService,
     private flyService: FlyService,
-    private router: Router
+    private router: Router,
+    private signInService: SignInService
   ) {}
 
   ngOnInit(): void {
@@ -65,9 +67,16 @@ export class ChoiceOfPlaceComponent implements OnInit {
 
   onSubmit() {
     this.flyService.saveFly(this.form.value);
+    console.log('WARTOSC ', this.flyService.saveFly(this.form.value));
+
+    if (!this.signInService.isUserLoggedIn()) {
+      this.router.navigate(['/logon'], {
+        queryParams: { showRegistration: false },
+      });
+    } else {
+      this.router.navigate(['/details']);
+    }
+
     this.form.reset();
-    this.router.navigate(['/logon'], {
-      queryParams: { showRegistration: false },
-    });
   }
 }
