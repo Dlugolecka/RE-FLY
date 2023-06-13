@@ -14,7 +14,6 @@ export class LogonComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((res) => {
-      console.log(res);
       this.showRegistration = JSON.parse(res['showRegistration']);
     });
   }

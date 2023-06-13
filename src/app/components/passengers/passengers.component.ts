@@ -47,7 +47,6 @@ export class PassengersComponent implements OnInit {
 
   ngOnInit(): void {
     this.minDate = moment().format('DD.MM.YYYY');
-    console.log('minDate: ', this.minDate);
   }
 
   showPassengers() {

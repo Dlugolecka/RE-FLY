@@ -7,10 +7,5 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent {
-  // range = new FormGroup({
-  //   start: new FormControl<Date | null>(null),
-  //   end: new FormControl<Date | null>(null),
-  // });
-
   @Input() form: FormGroup = new FormGroup({});
 }

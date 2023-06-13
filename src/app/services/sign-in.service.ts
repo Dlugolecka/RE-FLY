@@ -30,7 +30,6 @@ export class SignInService {
       userPassword === parsedUserDataBase.password
     ) {
       this.user = parsedUserDataBase;
-      console.log('user:', this.user);
       this.user$.next(this.user);
     }
   }

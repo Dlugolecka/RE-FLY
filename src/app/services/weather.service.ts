@@ -18,7 +18,6 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   getWeather(city: string): Observable<any> {
-    console.log('TEST', this.Coordinates[city][0]);
     const url: string = `https://api.open-meteo.com/v1/forecast?latitude=${this.Coordinates[city][0]}&longitude=${this.Coordinates[city][1]}&hourly=temperature_2m,rain,showers,snowfall,snow_depth,windspeed_10m&current_weather=true&forecast_days=1&timezone=Europe%2FBerlin`;
     return this.http.get(url);
   }

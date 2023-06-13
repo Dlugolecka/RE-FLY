@@ -43,7 +43,6 @@ export class SignUpComponent implements OnInit {
 
   onSignUp(): void {
     this.signUpService.registerUser(this.form.value);
-    console.log(this.signInService.isUserLoggedIn());
     this.signInService.getUser(this.form.value);
 
     if (this.flyService.getFly()) {

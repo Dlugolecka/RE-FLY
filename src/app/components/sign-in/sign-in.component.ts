@@ -22,7 +22,6 @@ export class SignInComponent {
   ) {}
 
   onSignIn(): void {
-    console.log(this.form.value);
     this.signInService.getUser(this.form.value);
     this.form.reset();
 

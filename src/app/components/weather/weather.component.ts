@@ -17,22 +17,18 @@ export class WeatherComponent implements OnInit {
     this.weatherService.departure$
       .pipe(filter((el) => !!el))
       .subscribe((city) => {
-        console.log(city);
         this.weatherService.getWeather(city).subscribe((res) => {
           this.departureWeather = res['current_weather'];
           this.departureCity = city;
-          console.log('weather', this.departureWeather);
         });
       });
 
     this.weatherService.arrival$
       .pipe(filter((el) => !!el))
       .subscribe((city) => {
-        console.log(city);
         this.weatherService.getWeather(city).subscribe((res) => {
           this.arrivalWeather = res['current_weather'];
           this.arrivalCity = city;
-          console.log('arr weather', this.arrivalWeather);
         });
       });
   }

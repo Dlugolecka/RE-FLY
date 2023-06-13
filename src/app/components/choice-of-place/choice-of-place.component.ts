@@ -50,8 +50,6 @@ export class ChoiceOfPlaceComponent implements OnInit {
     this.form.get('arrival')?.disable();
 
     this.form.valueChanges.subscribe((res) => {
-      console.log('form', res);
-      console.log('departure', this.form.get('departure')?.value);
       if (this.departureCity !== this.form.get('departure')?.value) {
         this.departureCity = this.form.get('departure')?.value;
         this.weatherService.departure$.next(this.departureCity);
@@ -67,7 +65,6 @@ export class ChoiceOfPlaceComponent implements OnInit {
 
   onSubmit() {
     this.flyService.saveFly(this.form.value);
-    console.log('WARTOSC ', this.flyService.saveFly(this.form.value));
 
     if (!this.signInService.isUserLoggedIn()) {
       this.router.navigate(['/logon'], {

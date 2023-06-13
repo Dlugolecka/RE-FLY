@@ -24,14 +24,12 @@ export class AirplaneComponent implements OnInit {
     this.fly = this.flyService.getFly();
     if (this.fly !== null) {
       this.limit = this.fly.passangers.adult + this.fly.passangers.kids;
-      console.log(this.limit);
     } else {
       this.router.navigate(['/home'], {});
     }
   }
 
   onSelect(seat: string) {
-    // console.log(`${rowName}${rowIndex + 1}`);
     if (this.limit === this.selected.length && !this.selected.includes(seat)) {
       return;
     }
@@ -41,6 +39,5 @@ export class AirplaneComponent implements OnInit {
       this.selected.push(seat);
       this.seatSelect.emit(this.selected);
     }
-    console.log(this.selected);
   }
 }

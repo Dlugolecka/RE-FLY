@@ -24,15 +24,4 @@ export class ArrivalPaceComponent implements OnInit {
       }
     );
   }
-
-  hidden() {
-    // console.log(
-    //   'miejsce wylotu - porownanie',
-    //   this.form.get('departure')?.value
-    // );
-    // console.log(
-    //   'miejsce przylotu - porownanie',
-    //   this.form.get('arrival')?.value
-    // );
-  }
 }

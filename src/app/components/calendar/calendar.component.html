@@ -9,7 +9,6 @@
       />
       <input matEndDate [formControlName]="'endDate'" placeholder="End date" />
     </mat-date-range-input>
-    <!-- <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint> -->
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-date-range-picker #picker></mat-date-range-picker>
 
@@ -21,6 +20,4 @@
       >Invalid end date</mat-error
     >
   </mat-form-field>
-
-  <!-- <p>Selected range: {{ range.value | json }}</p> -->
 </div>

@@ -27,9 +27,7 @@ export class DetailsComponent implements OnInit {
     private flyService: FlyService
   ) {}
   ngOnInit() {
-    this.form.valueChanges.subscribe((res) => {
-      console.log(res);
-    });
+    this.form.valueChanges.subscribe((res) => {});
   }
 
   onSubmit() {

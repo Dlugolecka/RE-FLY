@@ -15,10 +15,8 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     if (this.signInService.isUserLoggedIn()) {
-      console.log('zalogowany');
       return true;
     } else {
-      console.log('niezalogowany');
       return false;
     }
   }
