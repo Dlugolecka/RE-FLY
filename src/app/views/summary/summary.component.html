@@ -37,7 +37,13 @@
       </div>
       <div class="parameter_container">
         <label>Total Price</label>
-        <p>{{ totalPrice }}EURO</p>
+        <select>
+          <option>
+            {{ totalPrice | currency : "PLN" }}
+          </option>
+          <option>{{ totalPriceUSD | currency : "USD" }}</option>
+          <option>{{ totalPriceEURO | currency : "EUR" }}</option>
+        </select>
       </div>
     </div>
     <div class="summary">Thank you for booking your flight on our website!</div>
